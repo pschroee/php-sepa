@@ -17,23 +17,20 @@ $charset = "utf-8";
 
 /**
  * format bytes to biggest unit
- * 
+ *
  * @param number $bytes
  * @param number $decimals
  * @return string
  */
 function formatFilesize($bytes, $decimals = 2)
 {
-	if (($bytes = intval($bytes)) < 1024)
-	{
+	if (($bytes = intval($bytes)) < 1024) {
 		return "{$bytes} Byte";
 	}
 	$units = ["KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"];
-	foreach ($units as $k => $unit)
-	{
+	foreach ($units as $k => $unit) {
 		$multiplier = pow(1024, $k + 1);
-		if ($bytes < ($multiplier * 1024))
-		{
+		if ($bytes < ($multiplier * 1024)) {
 			break;
 		}
 	}
