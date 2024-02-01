@@ -148,7 +148,7 @@ class Xml
 			$filename = 'sepa.xml';
 		}
 		header('Content-Type: text/xml');
-		header('Content-Disposition: attachment; filename="' + $filename + '"');
+		header('Content-Disposition: attachment; filename="' . $filename . '"');
 		header('Pragma: no-cache');
 
 		echo $this->get();
