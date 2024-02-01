@@ -20,7 +20,7 @@ class Factory
 		 * @var Validator[]
 		 */
 		static $validators = [];
-		$validatorName = '\\MG\\Sepa\\Validator\\' . $type;
+		$validatorName = '\\pschroee\\PhpSepa\\Sepa\\Validator\\' . $type;
 		if (! class_exists($validatorName)) {
 			throw new \Exception('Unknown type: ' . $type);
 		}
