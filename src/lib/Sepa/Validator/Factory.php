@@ -22,7 +22,7 @@ class Factory
 		static $validators = [];
 		$validatorName = '\\MG\\Sepa\\Validator\\' . $type;
 		if (! class_exists($validatorName)) {
-			throw new \pschroee\PhpSepa\Exception('Unknown type: ' . $type);
+			throw new \Exception('Unknown type: ' . $type);
 		}
 		if (! isset($validators[$type])) {
 			$validators[$type] = new $validatorName();
