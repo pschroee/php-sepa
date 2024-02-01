@@ -2,16 +2,16 @@
 // $Id: Exception.php 7657 2019-04-12 21:26:58Z markus $
 declare(strict_types=1);
 
-namespace MG\Sepa\Transaction;
+namespace pschroee\PhpSepa\Sepa\Transaction;
 
 /**
  * Extension of base exception to define transaction related errors
- * 
+ *
  * @author Markus
  * @since      2017-06-13
  * @uses \Exception
  */
-class Exception extends \MG\Exception
+class Exception extends \Exception
 {
 	const INSTRUCTION_ID_EMPTY = 3101;
 	const INSTRUCTION_ID_INVALID = 3102;

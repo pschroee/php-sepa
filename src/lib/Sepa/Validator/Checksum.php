@@ -2,11 +2,11 @@
 // $Id: Checksum.php 7657 2019-04-12 21:26:58Z markus $
 declare(strict_types=1);
 
-namespace MG\Sepa\Validator;
+namespace pschroee\PhpSepa\Sepa\Validator;
 
 /**
  * trait to calculate checksums
- * 
+ *
  * @author Markus
  * @since      2017-06-15
  */
@@ -21,11 +21,9 @@ trait Checksum
 	protected function calculateCheckDigit(string $checkSum) : int
 	{
 		$iLen = strlen($checkSum);
-		for ($i = 0; $i < $iLen; $i++)
-		{
+		for ($i = 0; $i < $iLen; $i++) {
 			$asciiCodeElement = ord($checkSum[$i]);
-			if ($asciiCodeElement > 64 && $asciiCodeElement < 91)
-			{
+			if ($asciiCodeElement > 64 && $asciiCodeElement < 91) {
 				$checkSum = substr($checkSum, 0, $i) . (string) $asciiCodeElement - 55 . substr($checkSum, $i + 1);
 			}
 		}

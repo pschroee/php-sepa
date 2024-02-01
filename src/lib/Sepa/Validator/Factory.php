@@ -2,13 +2,13 @@
 // $Id: Factory.php 7657 2019-04-12 21:26:58Z markus $
 declare(strict_types=1);
 
-namespace MG\Sepa\Validator;
+namespace pschroee\PhpSepa\Sepa\Validator;
 
-use \MG\Sepa\Validator;
+use \pschroee\PhpSepa\Sepa\Validator;
 
 /**
  * Validator Factory
- * 
+ *
  * @author Markus
  * @since      2017-06-16
  */
@@ -21,12 +21,10 @@ class Factory
 		 */
 		static $validators = [];
 		$validatorName = '\\MG\\Sepa\\Validator\\' . $type;
-		if (!class_exists($validatorName))
-		{
-			throw new \MG\Exception('Unknown type: ' . $type);
+		if (! class_exists($validatorName)) {
+			throw new \pschroee\PhpSepa\Exception('Unknown type: ' . $type);
 		}
-		if (!isSet($validators[$type]))
-		{
+		if (! isset($validators[$type])) {
 			$validators[$type] = new $validatorName();
 		}
 		return $validators[$type];

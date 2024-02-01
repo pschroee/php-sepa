@@ -2,15 +2,15 @@
 // $Id: DateTime.php 7657 2019-04-12 21:26:58Z markus $
 declare(strict_types=1);
 
-namespace MG\Sepa\Validator;
+namespace pschroee\PhpSepa\Sepa\Validator;
 
 /**
  * Class to validate datetime (YYYY-MM-DD\THH:II:SS)
- * 
+ *
  * @author Markus
  * @since      2017-06-15
  */
-class DateTime implements \MG\Sepa\Validator
+class DateTime implements \pschroee\PhpSepa\Sepa\Validator
 {
 	public function isValid($subject) : bool
 	{
